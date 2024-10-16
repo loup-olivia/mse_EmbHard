@@ -3,4 +3,4 @@
 - 1, basic LED: OK
 - 2, basic LED + timer : OK
 - 3, GPIO : NOK
-- 3, LCD : NOK
+- 4, LCD : NOK
