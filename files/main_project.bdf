@@ -236,7 +236,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 240 344 416 360)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "LCD_DATA[15..0]" (rect 5 0 88 17)(font "Intel Clear" ))
+	(text "LCD_DATA[15..0]" (rect 5 0 87 17)(font "Intel Clear" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -248,13 +248,13 @@ refer to the applicable agreement for further details.
 		(line (pt 98 12)(pt 94 8))
 	)
 	(flipy)
-	(annotation_block (location)(rect 504 384 560 408))
+	(annotation_block (location)(rect 416 368 472 392))
 )
 (pin
 	(output)
 	(rect 240 360 416 376)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "LCD_D_Cn" (rect 5 0 57 17)(font "Intel Clear" ))
+	(text "LCD_D_Cn" (rect 5 0 56 17)(font "Intel Clear" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -266,13 +266,13 @@ refer to the applicable agreement for further details.
 		(line (pt 98 12)(pt 94 8))
 	)
 	(flipy)
-	(annotation_block (location)(rect 592 432 648 456))
+	(annotation_block (location)(rect 416 360 472 384))
 )
 (pin
 	(output)
 	(rect 240 376 416 392)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "LCD_WRn" (rect 5 0 55 17)(font "Intel Clear" ))
+	(text "LCD_WRn" (rect 5 0 54 17)(font "Intel Clear" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -284,7 +284,7 @@ refer to the applicable agreement for further details.
 		(line (pt 98 12)(pt 94 8))
 	)
 	(flipy)
-	(annotation_block (location)(rect 704 472 760 496))
+	(annotation_block (location)(rect 416 384 472 408))
 )
 (pin
 	(bidir)

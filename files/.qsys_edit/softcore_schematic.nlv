@@ -13,15 +13,16 @@ preplace inst softcore.jtag_uart -pg 1 -lvl 4 -y 230
 preplace inst softcore.sysid_qsys_0 -pg 1 -lvl 4 -y 350
 preplace inst softcore.GPIO_0 -pg 1 -lvl 4 -y 130
 preplace inst softcore.CPU.clock_bridge -pg 1
+preplace netloc EXPORT<net_container>softcore</net_container>(SLAVE)SDRAM_controller.wire,(SLAVE)softcore.sdram_ctrl_wire) 1 0 4 NJ 780 NJ 780 NJ 780 NJ
 preplace netloc EXPORT<net_container>softcore</net_container>(SLAVE)softcore.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>softcore</net_container>(MASTER)softcore.altpll_0_c2,(MASTER)altpll_0.c2) 1 2 3 NJ 310 NJ 340 NJ
+preplace netloc INTERCONNECT<net_container>softcore</net_container>(SLAVE)altpll_0.inclk_interface_reset,(SLAVE)timer_0.reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)CPU.reset,(MASTER)clk_0.clk_reset,(SLAVE)GPIO_0.reset_sink,(MASTER)CPU.debug_reset_request,(SLAVE)SDRAM_controller.reset,(SLAVE)jtag_uart.reset,(SLAVE)int_LCD_0.reset_sink) 1 1 3 370 290 610 290 1070
 preplace netloc EXPORT<net_container>softcore</net_container>(SLAVE)clk_0.clk_in,(SLAVE)softcore.clk) 1 0 1 NJ
-preplace netloc INTERCONNECT<net_container>softcore</net_container>(SLAVE)SDRAM_controller.reset,(SLAVE)sysid_qsys_0.reset,(MASTER)CPU.debug_reset_request,(SLAVE)timer_0.reset,(SLAVE)int_LCD_0.reset_sink,(MASTER)clk_0.clk_reset,(SLAVE)CPU.reset,(SLAVE)jtag_uart.reset,(SLAVE)altpll_0.inclk_interface_reset,(SLAVE)GPIO_0.reset_sink) 1 1 3 350 410 590 490 1070
+preplace netloc EXPORT<net_container>softcore</net_container>(SLAVE)softcore.gpio_0_conduit_end,(SLAVE)GPIO_0.conduit_end) 1 0 4 NJ 180 NJ 180 NJ 180 NJ
+preplace netloc FAN_OUT<net_container>softcore</net_container>(MASTER)clk_0.clk,(SLAVE)int_LCD_0.clock_sink,(SLAVE)altpll_0.inclk_interface) 1 1 3 350 60 NJ 60 NJ
 preplace netloc EXPORT<net_container>softcore</net_container>(SLAVE)softcore.int_lcd_0_conduit_end,(SLAVE)int_LCD_0.conduit_end) 1 0 4 NJ 80 NJ 80 NJ 80 NJ
-preplace netloc FAN_OUT<net_container>softcore</net_container>(SLAVE)GPIO_0.clock,(SLAVE)timer_0.clk,(MASTER)altpll_0.c0,(SLAVE)sysid_qsys_0.clk,(SLAVE)jtag_uart.clk,(SLAVE)CPU.clk,(SLAVE)SDRAM_controller.clk) 1 2 2 630 310 1050
-preplace netloc FAN_OUT<net_container>softcore</net_container>(SLAVE)altpll_0.inclk_interface,(MASTER)clk_0.clk,(SLAVE)int_LCD_0.clock_sink) 1 1 3 350 290 NJ 290 1010
-preplace netloc INTERCONNECT<net_container>softcore</net_container>(SLAVE)CPU.debug_mem_slave,(SLAVE)GPIO_0.avalon_slave_0,(SLAVE)SDRAM_controller.s1,(SLAVE)int_LCD_0.avalon_slave,(SLAVE)jtag_uart.avalon_jtag_slave,(SLAVE)sysid_qsys_0.control_slave,(MASTER)CPU.data_master,(MASTER)CPU.instruction_master,(SLAVE)timer_0.s1,(SLAVE)altpll_0.pll_slave) 1 1 3 370 430 610 270 990
-preplace netloc FAN_OUT<net_container>softcore</net_container>(SLAVE)timer_0.irq,(MASTER)CPU.irq,(SLAVE)jtag_uart.irq) 1 3 1 1030
-preplace netloc EXPORT<net_container>softcore</net_container>(SLAVE)softcore.sdram_ctrl_wire,(SLAVE)SDRAM_controller.wire) 1 0 4 NJ 780 NJ 780 NJ 780 NJ
-preplace netloc EXPORT<net_container>softcore</net_container>(SLAVE)GPIO_0.conduit_end,(SLAVE)softcore.gpio_0_conduit_end) 1 0 4 NJ 180 NJ 180 NJ 180 NJ
-levelinfo -pg 1 0 140 1290
-levelinfo -hier softcore 150 180 400 750 1140 1280
+preplace netloc FAN_OUT<net_container>softcore</net_container>(SLAVE)GPIO_0.clock,(SLAVE)CPU.clk,(SLAVE)timer_0.clk,(SLAVE)SDRAM_controller.clk,(MASTER)altpll_0.c0,(SLAVE)sysid_qsys_0.clk,(SLAVE)jtag_uart.clk) 1 2 2 670 270 1090
+preplace netloc INTERCONNECT<net_container>softcore</net_container>(SLAVE)GPIO_0.avalon_slave_0,(SLAVE)timer_0.s1,(SLAVE)jtag_uart.avalon_jtag_slave,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)altpll_0.pll_slave,(SLAVE)int_LCD_0.avalon_slave,(MASTER)CPU.instruction_master,(MASTER)CPU.data_master,(SLAVE)CPU.debug_mem_slave,(SLAVE)SDRAM_controller.s1) 1 1 3 390 310 630 250 1030
+preplace netloc FAN_OUT<net_container>softcore</net_container>(SLAVE)timer_0.irq,(SLAVE)jtag_uart.irq,(MASTER)CPU.irq) 1 3 1 1110
+levelinfo -pg 1 0 140 1400
+levelinfo -hier softcore 150 180 420 790 1160 1300

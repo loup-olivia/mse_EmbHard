@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'softcore'
  * SOPC Builder design path: ../../softcore.sopcinfo
  *
- * Generated: Sun Oct 20 15:38:52 CEST 2024
+ * Generated: Sun Oct 27 15:47:49 CET 2024
  */
 
 /*
@@ -148,6 +148,7 @@
 #define __ALTERA_NIOS2_GEN2
 #define __ALTPLL
 #define __GPIO
+#define __INT_LCD
 
 
 /*
@@ -265,6 +266,20 @@
 
 
 /*
+ * int_LCD_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_int_LCD_0 int_LCD
+#define INT_LCD_0_BASE 0x2001058
+#define INT_LCD_0_IRQ -1
+#define INT_LCD_0_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define INT_LCD_0_NAME "/dev/int_LCD_0"
+#define INT_LCD_0_SPAN 4
+#define INT_LCD_0_TYPE "int_LCD"
+
+
+/*
  * jtag_uart configuration
  *
  */
@@ -294,7 +309,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1729431308
+#define SYSID_QSYS_0_TIMESTAMP 1730040242
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 
