@@ -57,14 +57,14 @@ void LCD_Write_Command(int command);
 int main()
 {
 	printf("Lets start counting\n");
-	//IOWR_32DIRECT(GPIO_0_BASE,DIR,0xFFFFFF);
-	IOWR_32DIRECT(INT_LCD_0_BASE,LCD_DIR,0xFFFF);
+	IOWR_32DIRECT(GPIO_0_BASE,DIR,0xFFFFFF);
+	IOWR_16DIRECT(INT_LCD_0_BASE,LCD_DIR,0xFFFF);
 
 	int_timer_interrupt();
 	init_LCD();
 	LCD_Write_Command(0x002C);
 	int data = 0x07E0;
-	while(1)
+	/*while(1)
 	{
 		switch(data)
 		{
@@ -90,14 +90,14 @@ int main()
 		}
 		counter = 0;
 		while(counter<400);
-	}
-	/*while(1){
+	}*/
+	while(1){
 	       LCD_Write_Command(0x002C);
 	        for(int i = 0; i< LCD_WIDTH*LCD_HEIGHT; i++){
 	        	LCD_Write_Data(i&0xFFFF);
 	        }
-	}*/
-	return 0;
+	}
+	return 1;
 }
 
 
@@ -117,16 +117,17 @@ static void time_isr(void * context, alt_u32 id)
 	IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_0_BASE,0);
 	counter++;
 	printf("counter 1s =%d\n",counter);
-	IOWR_32DIRECT(GPIO_0_BASE,PORT,counter);
+	//IOWR_32DIRECT(GPIO_0_BASE,PORT,counter);
 }
 // Please READ THE COMMENTS!!!
 
 void init_LCD() {
 
-    IOWR_8DIRECT(INT_LCD_0_BASE,LCD_PORT,LCD_RD_n|LCD_CS_n); // set reset on and 16 bits mode
+    IOWR_16DIRECT(GPIO_0_BASE,LCD_PORT,LCD_RD_n|LCD_CS_n); // set reset on and 16 bits mode
+    IOWR_16DIRECT(GPIO_0_BASE,LCD_CLR,LCD_RESET_N);
     while (counter<100){}   // include delay of at least 120 ms use your timer or a loop
-    IOWR_8DIRECT(INT_LCD_0_BASE,LCD_CLR,LCD_CS_n|LCD_IM0); // set reset off and 16 bits mode and enable LED_CS
-    IOWR_8DIRECT(INT_LCD_0_BASE,LCD_SET,LCD_RESET_N|LCD_RD_n); // set reset off and 16 bits mode and enable LED_CS
+    IOWR_16DIRECT(GPIO_0_BASE,LCD_CLR,LCD_CS_n|LCD_IM0); // set reset off and 16 bits mode and enable LED_CS
+    IOWR_16DIRECT(GPIO_0_BASE,LCD_SET,LCD_RESET_N|LCD_RD_n); // set reset off and 16 bits mode and enable LED_CS
     printf("%u\n",IORD_8DIRECT(INT_LCD_0_BASE,LCD_PIN));
      while (counter<200){}   // include delay of at least 120 ms use your timer or a loop
 
