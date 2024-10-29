@@ -64,7 +64,7 @@ int main()
 	init_LCD();
 	LCD_Write_Command(0x002C);
 	int data = 0x07E0;
-	/*while(1)
+	while(1)
 	{
 		switch(data)
 		{
@@ -90,14 +90,14 @@ int main()
 		}
 		counter = 0;
 		while(counter<400);
-	}*/
-	while(1){
+	}
+	/*while(1){
 	       LCD_Write_Command(0x002C);
 	        for(int i = 0; i< LCD_WIDTH*LCD_HEIGHT; i++){
 	        	LCD_Write_Data(i&0xFFFF);
 	        }
-	}
-	return 1;
+	}*/
+	return 0;
 }
 
 
@@ -125,6 +125,7 @@ void init_LCD() {
 
     IOWR_16DIRECT(GPIO_0_BASE,LCD_PORT,LCD_RD_n|LCD_CS_n); // set reset on and 16 bits mode
     IOWR_16DIRECT(GPIO_0_BASE,LCD_CLR,LCD_RESET_N);
+    IOWR_16DIRECT(GPIO_0_BASE,LCD_CLR,LCD_CS_n);
     while (counter<100){}   // include delay of at least 120 ms use your timer or a loop
     IOWR_16DIRECT(GPIO_0_BASE,LCD_CLR,LCD_CS_n|LCD_IM0); // set reset off and 16 bits mode and enable LED_CS
     IOWR_16DIRECT(GPIO_0_BASE,LCD_SET,LCD_RESET_N|LCD_RD_n); // set reset off and 16 bits mode and enable LED_CS
