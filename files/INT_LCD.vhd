@@ -74,7 +74,7 @@ begin
 			DBreg_s <= WriteData_i;
 
 	  end if; 
-	end process RegWr_p;
+	end process ;
  
 	StateMa_p: 
 	process(ChipSelect_i,Write_i,statePres_s)
@@ -84,7 +84,7 @@ begin
 		stateFut_s <= statePres_s;
 		case statePres_s is
 			when IDLE =>
-				if (ChipSelect_i <= '1' and Write_i <= '1') then
+				if ChipSelect_i <= '1' and Write_i <= '1' then
 					stateFut_s <= S1;
 				end if;
 			when S1 =>

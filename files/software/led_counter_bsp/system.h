@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'softcore'
  * SOPC Builder design path: ../../softcore.sopcinfo
  *
- * Generated: Sun Oct 27 15:47:49 CET 2024
+ * Generated: Wed Oct 30 16:18:01 CET 2024
  */
 
 /*
@@ -148,7 +148,7 @@
 #define __ALTERA_NIOS2_GEN2
 #define __ALTPLL
 #define __GPIO
-#define __INT_LCD
+#define __LCD_CTRL
 
 
 /*
@@ -163,6 +163,20 @@
 #define GPIO_0_NAME "/dev/GPIO_0"
 #define GPIO_0_SPAN 32
 #define GPIO_0_TYPE "GPIO"
+
+
+/*
+ * GPIO_1 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_GPIO_1 GPIO
+#define GPIO_1_BASE 0x2001058
+#define GPIO_1_IRQ -1
+#define GPIO_1_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define GPIO_1_NAME "/dev/GPIO_1"
+#define GPIO_1_SPAN 8
+#define GPIO_1_TYPE "GPIO"
 
 
 /*
@@ -266,20 +280,6 @@
 
 
 /*
- * int_LCD_0 configuration
- *
- */
-
-#define ALT_MODULE_CLASS_int_LCD_0 int_LCD
-#define INT_LCD_0_BASE 0x2001058
-#define INT_LCD_0_IRQ -1
-#define INT_LCD_0_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define INT_LCD_0_NAME "/dev/int_LCD_0"
-#define INT_LCD_0_SPAN 4
-#define INT_LCD_0_TYPE "int_LCD"
-
-
-/*
  * jtag_uart configuration
  *
  */
@@ -298,6 +298,20 @@
 
 
 /*
+ * lcd_ctrl_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_lcd_ctrl_0 lcd_ctrl
+#define LCD_CTRL_0_BASE 0x2001060
+#define LCD_CTRL_0_IRQ -1
+#define LCD_CTRL_0_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define LCD_CTRL_0_NAME "/dev/lcd_ctrl_0"
+#define LCD_CTRL_0_SPAN 4
+#define LCD_CTRL_0_TYPE "lcd_ctrl"
+
+
+/*
  * sysid_qsys_0 configuration
  *
  */
@@ -309,7 +323,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1730040242
+#define SYSID_QSYS_0_TIMESTAMP 1730301260
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 

@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>28 oct. 2024 18:02:11</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1730134931633</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>30 oct. 2024 16:18:01</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1730301481556</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\olivi\master\embHard\mse_EmbHard\files\software\led_counter_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\softcore.sopcinfo</SopcDesignFile>
@@ -929,8 +929,14 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>int_LCD_0</slaveDescriptor>
-                <addressRange>0x02001058 - 0x0200105B</addressRange>
+                <slaveDescriptor>GPIO_1</slaveDescriptor>
+                <addressRange>0x02001058 - 0x0200105F</addressRange>
+                <addressSpan>8</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>lcd_ctrl_0</slaveDescriptor>
+                <addressRange>0x02001060 - 0x02001063</addressRange>
                 <addressSpan>4</addressSpan>
                 <attributes/>
         </MemoryMap>
